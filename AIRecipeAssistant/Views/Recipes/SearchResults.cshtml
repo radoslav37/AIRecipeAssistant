@@ -1,0 +1,33 @@
+﻿@model List<AIRecipeAssistant.Models.Meal>
+
+@{
+    ViewData["Title"] = "Резултати";
+}
+
+<h1>Рецепти с продукти: @ViewBag.Ingredients</h1>
+
+@if (Model.Count == 0)
+{
+    <p>Не бяха намерени рецепти за тези продукти. Опитай с други съставки.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var meal in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <img src="@meal.Image" class="card-img-top" alt="@meal.Title" />
+                    <div class="card-body">
+                        <h5 class="card-title">@meal.Title</h5>
+
+                        @if (meal.MissedIngredients.Count > 0)
+                        {
+                            <p><strong>Липсват:</strong> @string.Join(", ", meal.MissedIngredients.Select(item => item.Name))</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

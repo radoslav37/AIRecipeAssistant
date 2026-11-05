@@ -3,6 +3,24 @@
 }
 
 <div class="text-center">
-    <h1>Recipes</h1>
-    <p>Тук ще търсиш рецепти според наличните продукти.</p>
+    <h1>Намери рецепта</h1>
+    <p>Въведи продуктите, които имаш под ръка.</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-controller="Recipes" asp-action="Search" method="post">
+            <div class="mb-3">
+                <label for="ingredients" class="form-label">Продукти</label>
+                <input type="text"
+                       id="ingredients"
+                       name="ingredients"
+                       class="form-control"
+                       placeholder="например: яйца, сирене, домати"
+                       required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Потърси рецепти</button>
+        </form>
+    </div>
 </div>
