@@ -4,73 +4,93 @@
     ViewData["Title"] = "История";
 }
 
-<h1>История на търсенията</h1>
+<div class="container recipe-page">
+    <section class="recipe-page-heading">
+        <p class="recipe-section-label mb-2">Запазени търсения</p>
+        <h1 class="display-5">Твоята кулинарна история</h1>
+        <p class="lead mb-0">
+            Върни се към продуктите и рецептите, които си разглеждал.
+        </p>
+    </section>
 
-@if (Model.Count == 0)
-{
-    <p>Все още няма запазени търсения.</p>
-}
-else
-{
-    @foreach (var item in Model.OrderByDescending(x => x.CreatedAt))
+    @if (Model.Count == 0)
     {
-        <section class="mb-5">
-            <h2 class="h4">Продукти: @item.Ingredients</h2>
-
-            @if (!string.IsNullOrWhiteSpace(item.AiRecipeIdea))
-            {
-                <div class="alert alert-info">
-                    <strong>Идея от ИИ:</strong>
-                    <p class="mb-0">@item.AiRecipeIdea</p>
-                </div>
-            }
-            <p class="text-muted">@item.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
-
-            @if (item.Recipes.Count == 0)
-            {
-                <p>Няма запазени подробности за рецептите в този стар запис.</p>
-            }
-            else
-            {
-                <div class="row">
-                    @foreach (var recipe in item.Recipes)
-                    {
-                        <div class="col-md-4 mb-4">
-                            <div class="card h-100">
-                                <img src="@recipe.Image"
-                                     class="card-img-top"
-                                     alt="@recipe.Title" />
-                                <div class="card-body">
-                                    <h3 class="h5 card-title">@recipe.Title</h3>
-                                    @if (recipe.UsedIngredients.Count > 0)
-                                    {
-                                        <p>
-                                            <strong>Налични:</strong>
-                                            @string.Join(", ", recipe.UsedIngredients.Select(x => x.Name))
-                                        </p>
-                                    }
-
-                                    @if (recipe.MissedIngredients.Count > 0)
-                                    {
-                                        <p>
-                                            <strong>Липсват:</strong>
-                                            @string.Join(", ", recipe.MissedIngredients.Select(x => x.Name))
-                                        </p>
-                                        
-                                    }
-                                    else
-                                    {
-                                        <p class="text-success">
-                                            <strong>Имаш всички нужни съставки!</strong>
-                                        </p>
-                                    }
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    }
-                </div>
-            }
-        </section>
+        <div class="recipe-panel">
+            <h2 class="h4">Историята е празна</h2>
+            <p>Направи първото си търсене, за да се появят запазените рецепти тук.</p>
+            <a asp-controller="Recipes" asp-action="Index" class="btn btn-success">
+                Потърси рецепти
+            </a>
+        </div>
     }
-}
+    else
+    {
+        @foreach (var item in Model.OrderByDescending(x => x.CreatedAt))
+        {
+            <section class="history-entry">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                    <div>
+                        <p class="recipe-section-label mb-1">Търсени продукти</p>
+                        <h2 class="h4 mb-0">@item.Ingredients</h2>
+                    </div>
+                    <span class="text-muted">
+                        @item.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+                    </span>
+                </div>
+
+                @if (!string.IsNullOrWhiteSpace(item.AiRecipeIdea))
+                {
+                    <div class="recipe-panel mb-4">
+                        <p class="recipe-section-label mb-2">Идея от ИИ</p>
+                        <p class="mb-0">@item.AiRecipeIdea</p>
+                    </div>
+                }
+
+                @if (item.Recipes.Count == 0)
+                {
+                    <p class="text-muted mb-0">
+                        Този стар запис няма запазени подробности за рецептите.
+                    </p>
+                }
+                else
+                {
+                    <div class="row g-4">
+                        @foreach (var recipe in item.Recipes)
+                        {
+                            <div class="col-md-6 col-lg-4">
+                                <article class="recipe-card">
+                                    <img src="@recipe.Image" alt="@recipe.Title" />
+                                    <div class="recipe-card-body">
+                                        <h3 class="h5">@recipe.Title</h3>
+
+                                        @if (recipe.UsedIngredients.Count > 0)
+                                        {
+                                            <p>
+                                                <strong>Имаш:</strong>
+                                                @string.Join(", ", recipe.UsedIngredients.Select(x => x.Name))
+                                            </p>
+                                        }
+
+                                        @if (recipe.MissedIngredients.Count > 0)
+                                        {
+                                            <p class="mb-0">
+                                                <strong>Липсват:</strong>
+                                                @string.Join(", ", recipe.MissedIngredients.Select(x => x.Name))
+                                            </p>
+                                        }
+                                        else
+                                        {
+                                            <p class="text-success mb-0">
+                                                <strong>Имаш всички нужни съставки!</strong>
+                                            </p>
+                                        }
+                                    </div>
+                                </article>
+                            </div>
+                        }
+                    </div>
+                }
+            </section>
+        }
+    }
+</div>

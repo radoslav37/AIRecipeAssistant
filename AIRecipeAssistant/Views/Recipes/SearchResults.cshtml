@@ -4,54 +4,69 @@
     ViewData["Title"] = "Резултати";
 }
 
-<h1>Рецепти с продукти: @ViewBag.Ingredients</h1>
+<div class="container recipe-page">
+    <section class="recipe-page-heading">
+        <p class="recipe-section-label mb-2">Подбрано за твоите продукти</p>
+        <h1 class="display-6">Рецепти с @ViewBag.Ingredients</h1>
+        <a asp-controller="Recipes" asp-action="Index" class="btn btn-success mt-2">
+            Ново търсене
+        </a>
+    </section>
 
-@if (!string.IsNullOrWhiteSpace(ViewBag.AiRecipeIdea))
-{
-    <div class="alert alert-info my-4">
-        <h2 class="h4">Идея от ИИ</h2>
-        <p class="mb-0">@ViewBag.AiRecipeIdea</p>
-    </div>
-}
+    @if (!string.IsNullOrWhiteSpace(ViewBag.AiRecipeIdea))
+    {
+        <section class="recipe-panel mb-4">
+            <p class="recipe-section-label mb-2">Малко вдъхновение</p>
+            <h2 class="h4">Идея от ИИ</h2>
+            <p class="mb-0">@ViewBag.AiRecipeIdea</p>
+        </section>
+    }
 
-@if (Model.Count == 0)
-{
-    <p>Не бяха намерени рецепти за тези продукти. Опитай с други съставки.</p>
-}
-else
-{
-    <div class="row">
-        @foreach (var meal in Model)
-        {
-            <div class="col-md-4 mb-4">
-                <div class="card h-100">
-                    <img src="@meal.Image" class="card-img-top" alt="@meal.Title" />
-                    <div class="card-body">
-                        <h5 class="card-title">@meal.Title</h5>
-                        @if (meal.UsedIngredients.Count > 0)
-                        {
-                            <p>
-                                <strong>Налични:</strong>
-                                @string.Join(", ", meal.UsedIngredients.Select(item => item.Name))
-                            </p>
-                        }
+    @if (Model.Count == 0)
+    {
+        <div class="recipe-panel">
+            <h2 class="h4">Няма намерени рецепти</h2>
+            <p class="mb-0">
+                Опитай с други продукти, например chicken, potato или tomato.
+            </p>
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var meal in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <article class="recipe-card">
+                        <img src="@meal.Image" alt="@meal.Title" />
+                        <div class="recipe-card-body">
+                            <h2 class="h5">@meal.Title</h2>
 
-                        @if (meal.MissedIngredients.Count > 0)
-                        {
-                            <p>
-                                <strong>Липсват:</strong>
-                                @string.Join(", ", meal.MissedIngredients.Select(item => item.Name))
-                            </p>
-                            
-                        }
-                        else
-                        {
-                            <p class="text-success"><strong>Имаш всички нужни съставки!</strong></p>
-                        }
-                        
-                    </div>
+                            @if (meal.UsedIngredients.Count > 0)
+                            {
+                                <p>
+                                    <strong>Имаш:</strong>
+                                    @string.Join(", ", meal.UsedIngredients.Select(x => x.Name))
+                                </p>
+                            }
+
+                            @if (meal.MissedIngredients.Count > 0)
+                            {
+                                <p class="mb-0">
+                                    <strong>Липсват:</strong>
+                                    @string.Join(", ", meal.MissedIngredients.Select(x => x.Name))
+                                </p>
+                            }
+                            else
+                            {
+                                <p class="text-success mb-0">
+                                    <strong>Имаш всички нужни съставки!</strong>
+                                </p>
+                            }
+                        </div>
+                    </article>
                 </div>
-            </div>
-        }
-    </div>
-}
+            }
+        </div>
+    }
+</div>

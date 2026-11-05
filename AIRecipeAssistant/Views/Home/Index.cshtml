@@ -1,8 +1,117 @@
 ﻿@{
-    ViewData["Title"] = "AI Recipe Assistant";
+    ViewData["Title"] = "Начало";
 }
 
-<div class="text-center">
-    <h1 class="display-4">AI Recipe Assistant</h1>
-    <p>Намери идеи за рецепти с продуктите, които имаш.</p>
+<div class="recipe-home">
+    <section class="recipe-hero mt-4  mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <p class="text-uppercase fw-bold text-success mb-3">
+                    Твоите продукти. Следващото ти ястие.
+                </p>
+
+                <h1>Какво има в хладилника?</h1>
+
+                <p class="lead mt-4">
+                    Въведи продуктите, които имаш, и открий рецепти,
+                    които си струва да опиташ.
+                </p>
+
+                <a class="btn btn-success btn-lg mt-3"
+                   asp-controller="Recipes"
+                   asp-action="Index">
+                    Да намерим рецепта
+                </a>
+
+               
+            </div>
+
+            <div class="col-lg-5 recipe-hero-art" aria-hidden="true">
+                🥗
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <div class="mb-4">
+            <p class="text-uppercase fw-bold text-success mb-2">Малко помощ в кухнята</p>
+            <h2>От наличните продукти до нова идея</h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <article class="recipe-feature">
+                    <div class="recipe-feature-icon">🥕</div>
+                    <h3 class="h5 mt-3">Кажи какво имаш</h3>
+                    <p class="mb-0">
+                        Въведи продуктите си, разделени със запетаи.
+                        Не е нужно да попълваш сложен формуляр.
+                    </p>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="recipe-feature">
+                    <div class="recipe-feature-icon">🍲</div>
+                    <h3 class="h5 mt-3">Разгледай рецептите</h3>
+                    <p class="mb-0">
+                        Виж снимки и предложения, както и кои от продуктите
+                        вече имаш и кои липсват.
+                    </p>
+                </article>
+            </div>
+
+            <div class="col-md-4">
+                <article class="recipe-feature">
+                    <div class="recipe-feature-icon">✨</div>
+                    <h3 class="h5 mt-3">Получи идея от ИИ</h3>
+                    <p class="mb-0">
+                        Gemini може да предложи идея за ястие от въведените
+                        продукти. Ако услугата е временно недостъпна,
+                        рецептите пак ще се показват.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="row align-items-center g-4 mb-5">
+        <div class="col-lg-5">
+            <h2>Лесно е — в три стъпки</h2>
+            <p class="text-muted">
+                Търсенията и намерените рецепти се пазят, за да можеш
+                да се върнеш към тях по-късно.
+            </p>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="recipe-step mb-3">
+                <strong>01 · Въведи продуктите</strong>
+                <div>Например: картофи, яйца, лук.</div>
+            </div>
+
+            <div class="recipe-step mb-3">
+                <strong>02 · Избери вдъхновение</strong>
+                <div>Разгледай рецептите и съставките им.</div>
+            </div>
+
+            <div class="recipe-step">
+                <strong>03 · Запази идеята</strong>
+                <div>Намери предишните си търсения в „История“.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recipe-quote text-center">
+        <p class="fs-5 mb-3">
+            „Понякога вечерята започва с това, което вече имаш.“
+        </p>
+        <a class="btn btn-outline-light"
+           asp-controller="History"
+           asp-action="Index">
+            Виж историята на търсенията
+        </a>
+    </section>
+
+    
 </div>

@@ -16,11 +16,14 @@ namespace AIRecipeAssistant.Services
 
         public async Task<string> SuggestRecipeIdeaAsync(string ingredients)
         {
+            const string unavailableMessage =
+                "В момента ИИ услугата не работи. Опитай отново по-късно.";
+
             var apiKey = _configuration["Gemini:ApiKey"];
 
             if (string.IsNullOrWhiteSpace(apiKey))
             {
-                return "Gemini API ключът не е настроен.";
+                return unavailableMessage;
             }
 
             var prompt =
@@ -48,25 +51,47 @@ namespace AIRecipeAssistant.Services
             var url =
                 $"https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key={Uri.EscapeDataString(apiKey)}";
 
-            using var response = await _httpClient.PostAsync(url, content);
-
-            if (!response.IsSuccessStatusCode)
+            try
             {
-                var errorBody = await response.Content.ReadAsStringAsync();
-                return $"Gemini грешка ({(int)response.StatusCode}): {errorBody}";
+                using var response = await _httpClient.PostAsync(url, content);
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    return unavailableMessage;
+                }
+
+                var responseJson = await response.Content.ReadAsStringAsync();
+                using var document = JsonDocument.Parse(responseJson);
+
+                return document.RootElement
+                    .GetProperty("candidates")[0]
+                    .GetProperty("content")
+                    .GetProperty("parts")[0]
+                    .GetProperty("text")
+                    .GetString()
+                    ?.Trim()
+                    ?? unavailableMessage;
             }
-
-            var responseJson = await response.Content.ReadAsStringAsync();
-            using var document = JsonDocument.Parse(responseJson);
-
-            return document.RootElement
-                .GetProperty("candidates")[0]
-                .GetProperty("content")
-                .GetProperty("parts")[0]
-                .GetProperty("text")
-                .GetString()
-                ?.Trim()
-                ?? "В момента не успях да генерирам идея за ястие.";
+            catch (TaskCanceledException)
+            {
+                return unavailableMessage;
+            }
+            catch (HttpRequestException)
+            {
+                return unavailableMessage;
+            }
+            catch (JsonException)
+            {
+                return unavailableMessage;
+            }
+            catch (KeyNotFoundException)
+            {
+                return unavailableMessage;
+            }
+            catch (InvalidOperationException)
+            {
+                return unavailableMessage;
+            }
         }
     }
 }

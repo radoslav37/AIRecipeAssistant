@@ -1,175 +1,46 @@
 [
   {
     "Id": 1,
-    "CacheKey": "egg, tomato",
-    "Ingredients": "egg, tomato",
+    "CacheKey": "chicken, egg, pasta, tomato",
+    "Ingredients": "egg, tomato, chicken, pasta",
     "Recipes": [
       {
-        "Id": 662276,
-        "Title": "Sun Dried Tomato and Herb Baked Eggs",
-        "Image": "https://img.spoonacular.com/recipes/662276-312x231.jpg",
+        "Id": 1054737,
+        "Title": "How to make the World\u2019s Greatest Lasagna Roll Ups",
+        "Image": "https://img.spoonacular.com/recipes/1054737-312x231.jpg",
         "MissedIngredients": [
+          {
+            "Name": "tomato sauce"
+          },
           {
             "Name": "basil"
           },
           {
             "Name": "parsley"
-          }
-        ],
-        "UsedIngredients": [
-          {
-            "Name": "eggs"
           },
           {
-            "Name": "sundried tomatoes"
-          }
-        ]
-      },
-      {
-        "Id": 769775,
-        "Title": "Simple Spinach and Tomato Frittata",
-        "Image": "https://img.spoonacular.com/recipes/769775-312x231.jpg",
-        "MissedIngredients": [
-          {
-            "Name": "personal skillet"
+            "Name": "garlic"
           },
           {
-            "Name": "spinach leaves"
-          }
-        ],
-        "UsedIngredients": [
-          {
-            "Name": "cherry tomatoes"
+            "Name": "ground beef i like"
           },
           {
-            "Name": "eggs"
-          }
-        ]
-      },
-      {
-        "Id": 643514,
-        "Title": "Fresh Herb Omelette",
-        "Image": "https://img.spoonacular.com/recipes/643514-312x231.jpg",
-        "MissedIngredients": [
-          {
-            "Name": "green onion"
-          },
-          {
-            "Name": "basil"
-          },
-          {
-            "Name": "parmesan cheese"
-          }
-        ],
-        "UsedIngredients": [
-          {
-            "Name": "eggs"
-          },
-          {
-            "Name": "cherry tomatoes"
-          }
-        ]
-      },
-      {
-        "Id": 640513,
-        "Title": "Cream Cheese with Sun Dried Tomatoes and Pesto Pastry",
-        "Image": "https://img.spoonacular.com/recipes/640513-312x231.jpg",
-        "MissedIngredients": [
-          {
-            "Name": "block of cream cheese"
-          },
-          {
-            "Name": "regular crescents from the section of the grocery"
-          },
-          {
-            "Name": "pesto"
-          }
-        ],
-        "UsedIngredients": [
-          {
-            "Name": "sundried tomatoes"
-          },
-          {
-            "Name": "egg - beat"
-          }
-        ]
-      },
-      {
-        "Id": 647876,
-        "Title": "Indian-Style Eggs On Toast",
-        "Image": "https://img.spoonacular.com/recipes/647876-312x231.jpg",
-        "MissedIngredients": [
-          {
-            "Name": "bread"
-          },
-          {
-            "Name": "onion"
-          },
-          {
-            "Name": "turmeric powder"
-          },
-          {
-            "Name": "coriander leaves"
-          }
-        ],
-        "UsedIngredients": [
-          {
-            "Name": "eggs"
-          },
-          {
-            "Name": "tomato"
-          }
-        ]
-      },
-      {
-        "Id": 716432,
-        "Title": "Finger Foods: Frittata Muffins",
-        "Image": "https://img.spoonacular.com/recipes/716432-312x231.jpg",
-        "MissedIngredients": [
-          {
-            "Name": "broccoli"
-          },
-          {
-            "Name": "chives"
-          },
-          {
-            "Name": "t cream"
-          },
-          {
-            "Name": "orange pepper"
-          },
-          {
-            "Name": "cheddar cheese"
-          }
-        ],
-        "UsedIngredients": [
-          {
-            "Name": "eggs"
-          },
-          {
-            "Name": "tomato"
-          }
-        ]
-      },
-      {
-        "Id": 663553,
-        "Title": "Tomato and Bacon Pizza With Rice Crust",
-        "Image": "https://img.spoonacular.com/recipes/663553-312x231.jpg",
-        "MissedIngredients": [
-          {
-            "Name": "bell pepper"
-          },
-          {
-            "Name": "rice"
+            "Name": "sausage"
           },
           {
             "Name": "seasoning"
           },
           {
-            "Name": "mozzarella cheese"
+            "Name": "m zarella cheese"
           },
           {
-            "Name": "at least of turkey bacon"
+            "Name": "onion"
+          },
+          {
+            "Name": "parmesan reggiano"
+          },
+          {
+            "Name": "ricotta cheese"
           }
         ],
         "UsedIngredients": [
@@ -177,20 +48,188 @@
             "Name": "egg"
           },
           {
+            "Name": "canned tomatoes"
+          },
+          {
+            "Name": "lasagna noodles"
+          },
+          {
+            "Name": "tomato paste"
+          }
+        ]
+      },
+      {
+        "Id": 638118,
+        "Title": "Chicken in a Basil Cream Sauce",
+        "Image": "https://img.spoonacular.com/recipes/638118-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "chicken breasts"
+          },
+          {
+            "Name": "panko"
+          },
+          {
+            "Name": "parmesan cheese"
+          },
+          {
+            "Name": "basil"
+          },
+          {
+            "Name": "heavy cream"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "spaghetti"
+          },
+          {
+            "Name": "egg"
+          },
+          {
+            "Name": "tomato"
+          }
+        ]
+      },
+      {
+        "Id": 663745,
+        "Title": "Totally Fresh Tomato Lasagna",
+        "Image": "https://img.spoonacular.com/recipes/663745-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "butter"
+          },
+          {
+            "Name": "mozzarella"
+          },
+          {
+            "Name": "milk"
+          },
+          {
+            "Name": "oregano"
+          },
+          {
+            "Name": "parmesan"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "egg"
+          },
+          {
+            "Name": "no-boil lasagna noodles"
+          },
+          {
             "Name": "tomatoes"
           }
         ]
       },
       {
-        "Id": 636769,
-        "Title": "Mini Ham Omelets",
-        "Image": "https://img.spoonacular.com/recipes/636769-312x231.jpg",
+        "Id": 1098240,
+        "Title": "Lemon Fresh Spaghetti with Garden Sauce \u0026 Pumpkin Flowers",
+        "Image": "https://img.spoonacular.com/recipes/1098240-312x231.jpg",
         "MissedIngredients": [
           {
-            "Name": "milk"
+            "Name": "garlic"
           },
           {
-            "Name": "onions"
+            "Name": "zucchini"
+          },
+          {
+            "Name": "pumpkin flowers"
+          },
+          {
+            "Name": "lemon"
+          },
+          {
+            "Name": "basil"
+          },
+          {
+            "Name": "romano cheese"
+          },
+          {
+            "Name": "pepper flakes"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "vine tomatoes"
+          },
+          {
+            "Name": "egg"
+          },
+          {
+            "Name": "spaghetti"
+          }
+        ]
+      },
+      {
+        "Id": 42312,
+        "Title": "Stuffed Giant Sea Shells Or Manicotti",
+        "Image": "https://img.spoonacular.com/recipes/42312-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "bread crumbs"
+          },
+          {
+            "Name": "tomato sauce"
+          },
+          {
+            "Name": "hamburger meat"
+          },
+          {
+            "Name": "onion"
+          },
+          {
+            "Name": "oregano"
+          },
+          {
+            "Name": "parsley"
+          },
+          {
+            "Name": "provolone cheese"
+          },
+          {
+            "Name": "ricotta cheese"
+          },
+          {
+            "Name": "mozzarella cheese"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "egg"
+          },
+          {
+            "Name": "giant sea shell noodles"
+          },
+          {
+            "Name": "tomato paste"
+          }
+        ]
+      },
+      {
+        "Id": 633677,
+        "Title": "Baked Mostaccioli",
+        "Image": "https://img.spoonacular.com/recipes/633677-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "chili powder"
+          },
+          {
+            "Name": "basil leaves"
+          },
+          {
+            "Name": "garlic"
+          },
+          {
+            "Name": "ground sirloin"
+          },
+          {
+            "Name": "sausages"
+          },
+          {
+            "Name": "onion and pepper"
           },
           {
             "Name": "parmesan cheese"
@@ -199,7 +238,181 @@
             "Name": "bell pepper"
           },
           {
-            "Name": "prosciutto"
+            "Name": "ricotta cheese"
+          },
+          {
+            "Name": "tomato paste"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "tomatoes"
+          },
+          {
+            "Name": "egg"
+          },
+          {
+            "Name": "mostaccioli pasta"
+          }
+        ]
+      },
+      {
+        "Id": 1697647,
+        "Title": "Loaded Macaroni Salad",
+        "Image": "https://img.spoonacular.com/recipes/1697647-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "mayonnaise"
+          },
+          {
+            "Name": "greek yogurt"
+          },
+          {
+            "Name": "dijon mustard"
+          },
+          {
+            "Name": "apple cider vinegar"
+          },
+          {
+            "Name": "olives"
+          },
+          {
+            "Name": "bacon"
+          },
+          {
+            "Name": "feta cheese"
+          },
+          {
+            "Name": "cucumber"
+          },
+          {
+            "Name": "bell pepper"
+          },
+          {
+            "Name": "avocado"
+          },
+          {
+            "Name": "scallions"
+          },
+          {
+            "Name": "basil"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "elbow macaroni"
+          },
+          {
+            "Name": "cherry tomatoes"
+          },
+          {
+            "Name": "hardboiled eggs"
+          }
+        ]
+      },
+      {
+        "Id": 663908,
+        "Title": "Tuna Balls In Tomato Sauce",
+        "Image": "https://img.spoonacular.com/recipes/663908-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "bread crumbs"
+          },
+          {
+            "Name": "broad-leaved parsley"
+          },
+          {
+            "Name": "tuna"
+          },
+          {
+            "Name": "celery"
+          },
+          {
+            "Name": "basil"
+          },
+          {
+            "Name": "garlic glove"
+          },
+          {
+            "Name": "heavy cream"
+          },
+          {
+            "Name": "lemon juice"
+          },
+          {
+            "Name": "lemon zest"
+          },
+          {
+            "Name": "marsala"
+          },
+          {
+            "Name": "parmesan"
+          },
+          {
+            "Name": "pine nuts"
+          },
+          {
+            "Name": "shallot"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "canned tomatoes"
+          },
+          {
+            "Name": "egg"
+          },
+          {
+            "Name": "spaghetti"
+          }
+        ]
+      },
+      {
+        "Id": 634978,
+        "Title": "Bihun Goreng Indonesia",
+        "Image": "https://img.spoonacular.com/recipes/634978-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "bok choy - cut"
+          },
+          {
+            "Name": "carrots"
+          },
+          {
+            "Name": "spoon tea of chicken bouillon"
+          },
+          {
+            "Name": "indonesian fish cracker"
+          },
+          {
+            "Name": "fried onions"
+          },
+          {
+            "Name": "garlic"
+          },
+          {
+            "Name": "green onions"
+          },
+          {
+            "Name": "meat balls"
+          },
+          {
+            "Name": "use blender to mix the ground spices"
+          },
+          {
+            "Name": "table spoon of oyster sauce"
+          },
+          {
+            "Name": "shallot"
+          },
+          {
+            "Name": "spoons table of soy sauce"
+          },
+          {
+            "Name": "onion"
+          },
+          {
+            "Name": "spoon tea of salt"
           }
         ],
         "UsedIngredients": [
@@ -208,28 +421,58 @@
           },
           {
             "Name": "eggs"
+          },
+          {
+            "Name": "vermicelli/ rice noodle/ stick rice"
           }
         ]
       },
       {
-        "Id": 633804,
-        "Title": "Baked Spinach, Tomato and Goat Cheese",
-        "Image": "https://img.spoonacular.com/recipes/633804-312x231.jpg",
+        "Id": 634582,
+        "Title": "Beef and Vegetable Penne Casserole",
+        "Image": "https://img.spoonacular.com/recipes/634582-312x231.jpg",
         "MissedIngredients": [
           {
-            "Name": "basil leaves"
+            "Name": "basil plus extra"
           },
           {
-            "Name": "goat cheese"
+            "Name": "garlic"
           },
           {
-            "Name": "panko crumbs"
+            "Name": "ground beef"
           },
           {
-            "Name": "cream"
+            "Name": "ground nutmeg"
           },
           {
-            "Name": "spinach"
+            "Name": "cottage cheese"
+          },
+          {
+            "Name": "mushrooms"
+          },
+          {
+            "Name": "bell pepper"
+          },
+          {
+            "Name": "onion"
+          },
+          {
+            "Name": "pepper flakes"
+          },
+          {
+            "Name": "cheddar cheese"
+          },
+          {
+            "Name": "mozzarella cheese"
+          },
+          {
+            "Name": "spinach leaves"
+          },
+          {
+            "Name": "squash"
+          },
+          {
+            "Name": "zucchini"
           }
         ],
         "UsedIngredients": [
@@ -237,42 +480,372 @@
             "Name": "eggs"
           },
           {
-            "Name": "vine tomato"
+            "Name": "penne pasta"
+          },
+          {
+            "Name": "tomatoes"
+          }
+        ]
+      }
+    ],
+    "AiRecipeIdea": "\u0412 \u043C\u043E\u043C\u0435\u043D\u0442\u0430 \u043D\u0435 \u0443\u0441\u043F\u044F\u0445 \u0434\u0430 \u0433\u0435\u043D\u0435\u0440\u0438\u0440\u0430\u043C \u0438\u0434\u0435\u044F \u0437\u0430 \u044F\u0441\u0442\u0438\u0435.",
+    "CreatedAt": "2026-11-05T22:59:54.1716489+02:00"
+  },
+  {
+    "Id": 2,
+    "CacheKey": "beef, cheese, potatoes",
+    "Ingredients": "cheese, beef, potatoes",
+    "Recipes": [
+      {
+        "Id": 633224,
+        "Title": "Baby Brie-Topped Potato Slices",
+        "Image": "https://img.spoonacular.com/recipes/633224-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "rosemary leaves"
+          },
+          {
+            "Name": "julienne-cut sundried tomatoes and herbs"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "alouette baby brie cheese"
+          },
+          {
+            "Name": "parmesan cheese"
+          },
+          {
+            "Name": "smalls potatoes"
           }
         ]
       },
       {
-        "Id": 639855,
-        "Title": "Codfish Salad",
-        "Image": "https://img.spoonacular.com/recipes/639855-312x231.jpg",
+        "Id": 649395,
+        "Title": "Lean Shepherd\u0027s Pie",
+        "Image": "https://img.spoonacular.com/recipes/649395-312x231.jpg",
         "MissedIngredients": [
           {
-            "Name": "garlic clove"
+            "Name": "chicken broth"
           },
           {
-            "Name": "peppers"
+            "Name": "corn kernels"
+          },
+          {
+            "Name": "onion"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "ground beef"
+          },
+          {
+            "Name": "potatoes"
+          },
+          {
+            "Name": "reduced fat cheddar cheese"
+          }
+        ]
+      },
+      {
+        "Id": 651707,
+        "Title": "Mexican Stuffed Potatoes",
+        "Image": "https://img.spoonacular.com/recipes/651707-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "salsa"
+          },
+          {
+            "Name": "roma tomato"
+          },
+          {
+            "Name": "green onion"
+          },
+          {
+            "Name": "avocado"
+          },
+          {
+            "Name": "cream"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "extra beef"
+          },
+          {
+            "Name": "yukon gold potatoes"
+          },
+          {
+            "Name": "cheddar cheese"
+          }
+        ]
+      },
+      {
+        "Id": 646870,
+        "Title": "Home Made Dry-Aged Sirloin Steak with Cheesy Roast Fingerling Potatoes",
+        "Image": "https://img.spoonacular.com/recipes/646870-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "granulated garlic"
+          },
+          {
+            "Name": "pepper flakes"
+          },
+          {
+            "Name": "cilantro"
+          },
+          {
+            "Name": "chives"
+          },
+          {
+            "Name": "garlic cloves"
+          },
+          {
+            "Name": "green onions"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "sirloin steaks"
+          },
+          {
+            "Name": "fingerling potatoes"
+          },
+          {
+            "Name": "mexican cheese blend"
+          }
+        ]
+      },
+      {
+        "Id": 634605,
+        "Title": "Beef Cottage Pie",
+        "Image": "https://img.spoonacular.com/recipes/634605-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "onions"
+          },
+          {
+            "Name": "celery"
+          },
+          {
+            "Name": "garlic"
+          },
+          {
+            "Name": "thyme"
+          },
+          {
+            "Name": "worcestershire sauce"
+          },
+          {
+            "Name": "vegetables"
+          },
+          {
+            "Name": "beef gravy"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "ground beef"
+          },
+          {
+            "Name": "potatoes"
+          },
+          {
+            "Name": "parmesan cheese"
+          }
+        ]
+      },
+      {
+        "Id": 661984,
+        "Title": "Stuffed Breakfast Balls",
+        "Image": "https://img.spoonacular.com/recipes/661984-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "basil"
+          },
+          {
+            "Name": "eggs"
+          },
+          {
+            "Name": "bell pepper"
+          },
+          {
+            "Name": "marjoram"
+          },
+          {
+            "Name": "onion flakes"
+          },
+          {
+            "Name": "sage"
+          },
+          {
+            "Name": "tomato"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "goat cheese"
+          },
+          {
+            "Name": "ground beef"
+          },
+          {
+            "Name": "skinned potatoes"
+          }
+        ]
+      },
+      {
+        "Id": 642091,
+        "Title": "Easy Shepherd\u0027s Pie (Beef And/or Lamb Combo)",
+        "Image": "https://img.spoonacular.com/recipes/642091-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "beef stock"
+          },
+          {
+            "Name": "butter"
+          },
+          {
+            "Name": "carrot"
+          },
+          {
+            "Name": "egg yolk"
+          },
+          {
+            "Name": "parsley leaves"
+          },
+          {
+            "Name": "thyme"
+          },
+          {
+            "Name": "1%% milk"
           },
           {
             "Name": "onion"
           },
           {
-            "Name": "peppers"
+            "Name": "to 1 peas"
           },
           {
-            "Name": "cod fish"
+            "Name": "paprika"
+          },
+          {
+            "Name": "tomato paste"
+          },
+          {
+            "Name": "worcestershire"
           }
         ],
         "UsedIngredients": [
           {
-            "Name": "hardboiled eggs"
+            "Name": "cream cheese"
           },
           {
-            "Name": "tomato"
+            "Name": "ground lamb"
+          },
+          {
+            "Name": "potatoes"
+          }
+        ]
+      },
+      {
+        "Id": 640182,
+        "Title": "Cottage Pie",
+        "Image": "https://img.spoonacular.com/recipes/640182-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "garlic and thyme"
+          },
+          {
+            "Name": "tomato paste"
+          },
+          {
+            "Name": "canned tomatoes"
+          },
+          {
+            "Name": "chicken broth"
+          },
+          {
+            "Name": "wine"
+          },
+          {
+            "Name": "worcestershire sauce"
+          },
+          {
+            "Name": "dijon mustard"
+          },
+          {
+            "Name": "peas"
+          },
+          {
+            "Name": "coriander"
+          },
+          {
+            "Name": "ground ginger"
+          },
+          {
+            "Name": "cinnamon"
+          },
+          {
+            "Name": "butter"
+          },
+          {
+            "Name": "milk"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "ground beef"
+          },
+          {
+            "Name": "russet potatoes"
+          },
+          {
+            "Name": "cheddar cheese"
+          }
+        ]
+      },
+      {
+        "Id": 640457,
+        "Title": "Crash Hot Potatoes",
+        "Image": "https://img.spoonacular.com/recipes/640457-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "rosemary"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "new potatoes"
+          },
+          {
+            "Name": "cheese"
+          }
+        ]
+      },
+      {
+        "Id": 662744,
+        "Title": "Taco Egg Roll",
+        "Image": "https://img.spoonacular.com/recipes/662744-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "taco seasoning"
+          },
+          {
+            "Name": "egg roll wrappers"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "ground beef"
+          },
+          {
+            "Name": "mexican cheese"
           }
         ]
       }
     ],
-    "AiRecipeIdea": "Gemini \u0433\u0440\u0435\u0448\u043A\u0430 (503): {\n  \u0022error\u0022: {\n    \u0022code\u0022: 503,\n    \u0022message\u0022: \u0022This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\u0022,\n    \u0022status\u0022: \u0022UNAVAILABLE\u0022\n  }\n}\n",
-    "CreatedAt": "2026-11-05T22:09:08.1128497+02:00"
+    "AiRecipeIdea": "\u0412 \u043C\u043E\u043C\u0435\u043D\u0442\u0430 \u0418\u0418 \u0443\u0441\u043B\u0443\u0433\u0430\u0442\u0430 \u043D\u0435 \u0440\u0430\u0431\u043E\u0442\u0438. \u041E\u043F\u0438\u0442\u0430\u0439 \u043E\u0442\u043D\u043E\u0432\u043E \u043F\u043E-\u043A\u044A\u0441\u043D\u043E.",
+    "CreatedAt": "2026-11-05T23:08:24.6946423+02:00"
   }
 ]

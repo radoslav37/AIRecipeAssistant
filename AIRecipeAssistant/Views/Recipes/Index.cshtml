@@ -1,26 +1,39 @@
 ﻿@{
-    ViewData["Title"] = "Recipes";
+    ViewData["Title"] = "Рецепти";
 }
 
-<div class="text-center">
-    <h1>Намери рецепта</h1>
-    <p>Въведи продуктите, които имаш под ръка.</p>
-</div>
+<div class="container recipe-page">
+    <section class="recipe-page-heading">
+        <p class="recipe-section-label mb-2">Започни с това, което имаш</p>
+        <h1 class="display-5">Какво готвим днес?</h1>
+        <p class="lead mb-0">
+            Въведи продуктите си и разгледай рецепти, които може да приготвиш.
+        </p>
+    </section>
 
-<div class="row justify-content-center">
-    <div class="col-md-6">
+    <section class="recipe-panel">
         <form asp-controller="Recipes" asp-action="Search" method="post">
-            <div class="mb-3">
-                <label for="ingredients" class="form-label">Продукти</label>
-                <input type="text"
-                       id="ingredients"
-                       name="ingredients"
-                       class="form-control"
-                       placeholder="например: яйца, сирене, домати"
-                       required />
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <label for="ingredients" class="form-label fw-semibold">
+                Продукти
+            </label>
+
+            <input type="text"
+                   id="ingredients"
+                   name="ingredients"
+                   class="form-control form-control-lg"
+                   placeholder="например: eggs, cheese, tomato"
+                   required />
+
+            <div class="form-text mb-3">
+                Разделяй продуктите със запетая. Имената на английски обикновено
+                дават по-добри резултати.
             </div>
 
-            <button type="submit" class="btn btn-primary">Потърси рецепти</button>
+            <button type="submit" class="btn btn-success btn-lg">
+                Намери рецепти
+            </button>
         </form>
-    </div>
+    </section>
 </div>
