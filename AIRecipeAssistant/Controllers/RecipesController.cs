@@ -8,13 +8,16 @@ namespace AIRecipeAssistant.Controllers
     {
         private readonly MealApiService _mealApiService;
         private readonly JsonStorageService _jsonStorageService;
+        private readonly GeminiService _geminiService;
 
         public RecipesController(
-            MealApiService mealApiService,
-            JsonStorageService jsonStorageService)
+    MealApiService mealApiService,
+    JsonStorageService jsonStorageService,
+    GeminiService geminiService)
         {
             _mealApiService = mealApiService;
             _jsonStorageService = jsonStorageService;
+            _geminiService = geminiService;
         }
 
         public IActionResult Index()
@@ -54,6 +57,7 @@ namespace AIRecipeAssistant.Controllers
             else
             {
                 meals = await _mealApiService.SearchByIngredientsAsync(ingredientList);
+
 
                 await _jsonStorageService.SaveAsync(new SearchHistory
                 {

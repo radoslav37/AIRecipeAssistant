@@ -20,11 +20,27 @@ else
                     <img src="@meal.Image" class="card-img-top" alt="@meal.Title" />
                     <div class="card-body">
                         <h5 class="card-title">@meal.Title</h5>
+                        @if (meal.UsedIngredients.Count > 0)
+                        {
+                            <p>
+                                <strong>Налични:</strong>
+                                @string.Join(", ", meal.UsedIngredients.Select(item => item.Name))
+                            </p>
+                        }
 
                         @if (meal.MissedIngredients.Count > 0)
                         {
-                            <p><strong>Липсват:</strong> @string.Join(", ", meal.MissedIngredients.Select(item => item.Name))</p>
+                            <p>
+                                <strong>Липсват:</strong>
+                                @string.Join(", ", meal.MissedIngredients.Select(item => item.Name))
+                            </p>
+                            
                         }
+                        else
+                        {
+                            <p class="text-success"><strong>Имаш всички нужни съставки!</strong></p>
+                        }
+                        
                     </div>
                 </div>
             </div>

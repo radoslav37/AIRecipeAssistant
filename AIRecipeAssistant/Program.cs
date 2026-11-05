@@ -2,6 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<AIRecipeAssistant.Services.MealApiService>();
 builder.Services.AddScoped<AIRecipeAssistant.Services.JsonStorageService>();
+builder.Services.AddHttpClient<AIRecipeAssistant.Services.GeminiService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
