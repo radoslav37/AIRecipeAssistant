@@ -12,7 +12,9 @@
 
         // Пълните резултати, включително URL адресите на снимките.
         public List<Meal> Recipes { get; set; } = new();
+        public string AiRecipeIdea { get; set; } = "";
 
         public DateTime CreatedAt { get; set; }
+        
     }
 }

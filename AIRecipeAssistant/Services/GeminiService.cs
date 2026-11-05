@@ -14,15 +14,8 @@ namespace AIRecipeAssistant.Services
             _configuration = configuration;
         }
 
-        public async Task<string> SuggestSubstitutionsAsync(
-            string recipeTitle,
-            List<string> missingIngredients)
+        public async Task<string> SuggestRecipeIdeaAsync(string ingredients)
         {
-            if (missingIngredients.Count == 0)
-            {
-                return "Не липсват съставки.";
-            }
-
             var apiKey = _configuration["Gemini:ApiKey"];
 
             if (string.IsNullOrWhiteSpace(apiKey))
@@ -31,9 +24,9 @@ namespace AIRecipeAssistant.Services
             }
 
             var prompt =
-                $"За рецептата '{recipeTitle}' липсват: {string.Join(", ", missingIngredients)}. " +
-                "Предложи кратки и практични заместители на липсващите съставки на български. " +
-                "Не добавяй увод.";
+                $"Предложи едно лесно ястие, което може да се приготви с тези продукти: {ingredients}. " +
+                "Отговори на български. Дай име на ястието и кратки инструкции в 3-5 стъпки. " +
+                "Използвай основно изброените продукти и посочи, ако са нужни основни подправки.";
 
             var requestBody = new
             {
@@ -60,7 +53,6 @@ namespace AIRecipeAssistant.Services
             if (!response.IsSuccessStatusCode)
             {
                 var errorBody = await response.Content.ReadAsStringAsync();
-
                 return $"Gemini грешка ({(int)response.StatusCode}): {errorBody}";
             }
 
@@ -74,7 +66,7 @@ namespace AIRecipeAssistant.Services
                 .GetProperty("text")
                 .GetString()
                 ?.Trim()
-                ?? "В момента няма предложение за замяна.";
+                ?? "В момента не успях да генерирам идея за ястие.";
         }
     }
 }

@@ -16,6 +16,14 @@ else
     {
         <section class="mb-5">
             <h2 class="h4">Продукти: @item.Ingredients</h2>
+
+            @if (!string.IsNullOrWhiteSpace(item.AiRecipeIdea))
+            {
+                <div class="alert alert-info">
+                    <strong>Идея от ИИ:</strong>
+                    <p class="mb-0">@item.AiRecipeIdea</p>
+                </div>
+            }
             <p class="text-muted">@item.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
 
             @if (item.Recipes.Count == 0)

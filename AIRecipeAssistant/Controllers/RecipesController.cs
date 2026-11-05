@@ -41,6 +41,8 @@ namespace AIRecipeAssistant.Controllers
                 return View("Index");
             }
 
+            var ingredientsText = string.Join(", ", ingredientList);
+
             var cacheKey = string.Join(", ",
                 ingredientList
                     .Select(item => item.ToLowerInvariant())
@@ -48,28 +50,42 @@ namespace AIRecipeAssistant.Controllers
 
             var cachedSearch = await _jsonStorageService.FindCacheAsync(cacheKey);
 
-            List<Meal> meals;
+            SearchHistory search;
 
             if (cachedSearch != null)
             {
-                meals = cachedSearch.Recipes;
+                search = cachedSearch;
+
+                // Добавя AI идея и към кеширан запис, който още няма такава.
+                if (string.IsNullOrWhiteSpace(search.AiRecipeIdea))
+                {
+                    search.AiRecipeIdea =
+                        await _geminiService.SuggestRecipeIdeaAsync(ingredientsText);
+
+                    await _jsonStorageService.SaveAsync(search);
+                }
             }
             else
             {
-                meals = await _mealApiService.SearchByIngredientsAsync(ingredientList);
+                var meals = await _mealApiService.SearchByIngredientsAsync(ingredientList);
+                var aiIdea = await _geminiService.SuggestRecipeIdeaAsync(ingredientsText);
 
-
-                await _jsonStorageService.SaveAsync(new SearchHistory
+                search = new SearchHistory
                 {
                     CacheKey = cacheKey,
-                    Ingredients = string.Join(", ", ingredientList),
+                    Ingredients = ingredientsText,
                     Recipes = meals,
+                    AiRecipeIdea = aiIdea,
                     CreatedAt = DateTime.Now
-                });
+                };
+
+                await _jsonStorageService.SaveAsync(search);
             }
 
-            ViewBag.Ingredients = string.Join(", ", ingredientList);
-            return View("SearchResults", meals);
+            ViewBag.Ingredients = ingredientsText;
+            ViewBag.AiRecipeIdea = search.AiRecipeIdea;
+
+            return View("SearchResults", search.Recipes);
         }
     }
 }
