@@ -1,14 +1,291 @@
 [
   {
     "Id": 1,
+    "CacheKey": "",
     "Ingredients": "egg",
-    "RecipeNames": "\u00C6bleskiver, Aj\u00ED de Aguacate Recipe (Colombian Spicy Avocado Sauce), Amok Trey \u2013 Cambodian Fish Curry, Apple Potato Mash (Hete bliksem) , Bajan Sweet Bread, Baked brie with sorrel jam, Balchi di Pisca, Barbecue pork buns, Beef Lo Mein, Beetroot latkes, Beetroot pancakes, Belgian Meatballs in Li\u00E8ge Syrup Sauce, Blini Pancakes, Boterkoek (Dutch Butter Cake), Boxty Breakfast, Bread omelette, Bryndzov\u00E9 Halu\u0161ky, Challah, Cheese Borek, Cheese Sticks, Chick-Fil-A Sandwich, Chicken Fried Rice, Chinese Orange Chicken, Chivito sandwich, Chivito uruguayo, Chocolate alfajores, Chocolate Coconut Squares, Chocolate empanadas, Chorizo \u0026 soft-boiled egg salad, Chorizo, potato \u0026 cheese omelette, Cinnamon buns, Cinnamon Roll Cookies, Clear Soup with Semolina Dumplings, Colombian Bu\u00F1uelos Recipe, Cornes de Gazelle (Gazelle Horns), Cream Cheese Tart, Dutch stroopwafel, Dziriat (Algerian Almond Tarts), Egg Foo Young, Empanadas, Empanadas Fritas de Queso, Ensaimada, Falafel, Fa\u0161\u00EDrky, Flamiche, Flan, Frikadeller - Danish Meatballs, Fyrstekake \u2013 Norwegian Prince Cake, General Tsos Chicken, Gevulde speculaas, Gingerbread Waffles, Ham croquetas, Hveder - Danish Wheat Buns, Jam jam cookies, Jamaican Spice Bun Recipe, Jamon \u0026 wild garlic croquetas, Katsu Chicken curry, Khobz el Dar (Algerian Semolina Bread), Koulenje, Kurabie Butter Cookies, Lamingtons, Macaroni Pie, Mazariner \u2013 Scandinavian Almond Tartlets, Milanesa, Mince Pies, Mini bundt cakes, Mini butter buns, Moussaka, Mutabbaq, Nanaimo Bars, Norwegian Krumkake, Oatmeal pancakes, Pad See Ew, Parkin Cake, Paszteciki (Polish Pasties), Peanut Butter Cookies, Piernik (Polish gingerbread), Pistachio cake, Pisto con huevos, Polish chocolate \u0026 walnut cake, Polish patties (kotlety), Postre Chaj\u00E1, Quark and Rhubarb Pie, Ramen Noodles with Boiled Egg, Salmon Eggs Eggs Benedict, Salt cod tortilla, Saskatoon Pie, Sauerkraut and Fish Salad, Sauerkraut pierogi, Sauerkraut pierogii, Shakshouka, Shakshuka Feta Cheese, Shrimp Chow Fun, Singapore Noodles with Shrimp, Spiced tortilla, Spicy Thai prawn noodles, Spring onion and prawn empanadas, Suksessterte (Norwegian almond \u201Csuccess cake\u201D), Sweet and Sour Pork, Thai fried rice with prawns \u0026 peas, Timbits, Torrijas with sherry, Torta de fiambre, Tourtiere, Vanilla alfajores, Vegetarian Shakshuka, Walnut, date \u0026 honey cake, Yemeni Lahsa (Elite Shakshuka), Yorkshire Puddings, Zeeuwse bolussen, Zemiakov\u00E9 Placky",
+    "Recipes": [],
     "CreatedAt": "2026-11-05T15:27:11.0904552+02:00"
   },
   {
     "Id": 2,
+    "CacheKey": "",
     "Ingredients": "egg, tomato",
-    "RecipeNames": "Sun Dried Tomato and Herb Baked Eggs, Simple Spinach and Tomato Frittata, Fresh Herb Omelette, Cream Cheese with Sun Dried Tomatoes and Pesto Pastry, Indian-Style Eggs On Toast, Finger Foods: Frittata Muffins, Tomato and Bacon Pizza With Rice Crust, Mini Ham Omelets, Baked Spinach, Tomato and Goat Cheese, Codfish Salad",
+    "Recipes": [],
     "CreatedAt": "2026-11-05T16:07:48.3430683+02:00"
+  },
+  {
+    "Id": 3,
+    "CacheKey": "egg, tomato",
+    "Ingredients": "egg, tomato",
+    "Recipes": [
+      {
+        "Id": 662276,
+        "Title": "Sun Dried Tomato and Herb Baked Eggs",
+        "Image": "https://img.spoonacular.com/recipes/662276-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "basil"
+          },
+          {
+            "Name": "parsley"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "eggs"
+          },
+          {
+            "Name": "sundried tomatoes"
+          }
+        ]
+      },
+      {
+        "Id": 769775,
+        "Title": "Simple Spinach and Tomato Frittata",
+        "Image": "https://img.spoonacular.com/recipes/769775-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "personal skillet"
+          },
+          {
+            "Name": "spinach leaves"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "cherry tomatoes"
+          },
+          {
+            "Name": "eggs"
+          }
+        ]
+      },
+      {
+        "Id": 643514,
+        "Title": "Fresh Herb Omelette",
+        "Image": "https://img.spoonacular.com/recipes/643514-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "green onion"
+          },
+          {
+            "Name": "basil"
+          },
+          {
+            "Name": "parmesan cheese"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "eggs"
+          },
+          {
+            "Name": "cherry tomatoes"
+          }
+        ]
+      },
+      {
+        "Id": 640513,
+        "Title": "Cream Cheese with Sun Dried Tomatoes and Pesto Pastry",
+        "Image": "https://img.spoonacular.com/recipes/640513-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "block of cream cheese"
+          },
+          {
+            "Name": "regular crescents from the section of the grocery"
+          },
+          {
+            "Name": "pesto"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "sundried tomatoes"
+          },
+          {
+            "Name": "egg - beat"
+          }
+        ]
+      },
+      {
+        "Id": 647876,
+        "Title": "Indian-Style Eggs On Toast",
+        "Image": "https://img.spoonacular.com/recipes/647876-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "bread"
+          },
+          {
+            "Name": "onion"
+          },
+          {
+            "Name": "turmeric powder"
+          },
+          {
+            "Name": "coriander leaves"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "eggs"
+          },
+          {
+            "Name": "tomato"
+          }
+        ]
+      },
+      {
+        "Id": 716432,
+        "Title": "Finger Foods: Frittata Muffins",
+        "Image": "https://img.spoonacular.com/recipes/716432-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "broccoli"
+          },
+          {
+            "Name": "chives"
+          },
+          {
+            "Name": "t cream"
+          },
+          {
+            "Name": "orange pepper"
+          },
+          {
+            "Name": "cheddar cheese"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "eggs"
+          },
+          {
+            "Name": "tomato"
+          }
+        ]
+      },
+      {
+        "Id": 663553,
+        "Title": "Tomato and Bacon Pizza With Rice Crust",
+        "Image": "https://img.spoonacular.com/recipes/663553-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "bell pepper"
+          },
+          {
+            "Name": "rice"
+          },
+          {
+            "Name": "seasoning"
+          },
+          {
+            "Name": "mozzarella cheese"
+          },
+          {
+            "Name": "at least of turkey bacon"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "egg"
+          },
+          {
+            "Name": "tomatoes"
+          }
+        ]
+      },
+      {
+        "Id": 636769,
+        "Title": "Mini Ham Omelets",
+        "Image": "https://img.spoonacular.com/recipes/636769-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "milk"
+          },
+          {
+            "Name": "onions"
+          },
+          {
+            "Name": "parmesan cheese"
+          },
+          {
+            "Name": "bell pepper"
+          },
+          {
+            "Name": "prosciutto"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "cherry tomatoes"
+          },
+          {
+            "Name": "eggs"
+          }
+        ]
+      },
+      {
+        "Id": 633804,
+        "Title": "Baked Spinach, Tomato and Goat Cheese",
+        "Image": "https://img.spoonacular.com/recipes/633804-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "basil leaves"
+          },
+          {
+            "Name": "goat cheese"
+          },
+          {
+            "Name": "panko crumbs"
+          },
+          {
+            "Name": "cream"
+          },
+          {
+            "Name": "spinach"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "eggs"
+          },
+          {
+            "Name": "vine tomato"
+          }
+        ]
+      },
+      {
+        "Id": 639855,
+        "Title": "Codfish Salad",
+        "Image": "https://img.spoonacular.com/recipes/639855-312x231.jpg",
+        "MissedIngredients": [
+          {
+            "Name": "garlic clove"
+          },
+          {
+            "Name": "peppers"
+          },
+          {
+            "Name": "onion"
+          },
+          {
+            "Name": "peppers"
+          },
+          {
+            "Name": "cod fish"
+          }
+        ],
+        "UsedIngredients": [
+          {
+            "Name": "hardboiled eggs"
+          },
+          {
+            "Name": "tomato"
+          }
+        ]
+      }
+    ],
+    "CreatedAt": "2026-11-05T16:40:04.779226+02:00"
   }
 ]

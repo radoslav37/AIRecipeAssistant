@@ -25,7 +25,7 @@ namespace AIRecipeAssistant.Controllers
         [HttpPost]
         public async Task<IActionResult> Search(string ingredients)
         {
-            var ingredientList = ingredients
+            var ingredientList = (ingredients ?? "")
                 .Split(',', StringSplitOptions.RemoveEmptyEntries)
                 .Select(item => item.Trim())
                 .Where(item => !string.IsNullOrWhiteSpace(item))
@@ -38,14 +38,31 @@ namespace AIRecipeAssistant.Controllers
                 return View("Index");
             }
 
-            var meals = await _mealApiService.SearchByIngredientsAsync(ingredientList);
+            var cacheKey = string.Join(", ",
+                ingredientList
+                    .Select(item => item.ToLowerInvariant())
+                    .OrderBy(item => item));
 
-            await _jsonStorageService.SaveAsync(new SearchHistory
+            var cachedSearch = await _jsonStorageService.FindCacheAsync(cacheKey);
+
+            List<Meal> meals;
+
+            if (cachedSearch != null)
             {
-                Ingredients = string.Join(", ", ingredientList),
-                RecipeNames = string.Join(", ", meals.Select(meal => meal.Title)),
-                CreatedAt = DateTime.Now
-            });
+                meals = cachedSearch.Recipes;
+            }
+            else
+            {
+                meals = await _mealApiService.SearchByIngredientsAsync(ingredientList);
+
+                await _jsonStorageService.SaveAsync(new SearchHistory
+                {
+                    CacheKey = cacheKey,
+                    Ingredients = string.Join(", ", ingredientList),
+                    Recipes = meals,
+                    CreatedAt = DateTime.Now
+                });
+            }
 
             ViewBag.Ingredients = string.Join(", ", ingredientList);
             return View("SearchResults", meals);

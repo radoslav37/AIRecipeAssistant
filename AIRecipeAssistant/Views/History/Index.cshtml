@@ -12,23 +12,42 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Продукти</th>
-                <th>Намерени рецепти</th>
-                <th>Дата</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
+    @foreach (var item in Model.OrderByDescending(x => x.CreatedAt))
+    {
+        <section class="mb-5">
+            <h2 class="h4">Продукти: @item.Ingredients</h2>
+            <p class="text-muted">@item.CreatedAt.ToString("dd.MM.yyyy HH:mm")</p>
+
+            @if (item.Recipes.Count == 0)
             {
-                <tr>
-                    <td>@item.Ingredients</td>
-                    <td>@item.RecipeNames</td>
-                    <td>@item.CreatedAt.ToString("dd.MM.yyyy HH:mm")</td>
-                </tr>
+                <p>Няма запазени подробности за рецептите в този стар запис.</p>
             }
-        </tbody>
-    </table>
+            else
+            {
+                <div class="row">
+                    @foreach (var recipe in item.Recipes)
+                    {
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <img src="@recipe.Image"
+                                     class="card-img-top"
+                                     alt="@recipe.Title" />
+                                <div class="card-body">
+                                    <h3 class="h5 card-title">@recipe.Title</h3>
+
+                                    @if (recipe.MissedIngredients.Count > 0)
+                                    {
+                                        <p>
+                                            <strong>Липсват:</strong>
+                                            @string.Join(", ", recipe.MissedIngredients.Select(x => x.Name))
+                                        </p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </section>
+    }
 }
