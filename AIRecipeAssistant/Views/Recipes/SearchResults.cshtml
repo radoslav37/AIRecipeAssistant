@@ -15,10 +15,19 @@
 
     @if (!string.IsNullOrWhiteSpace(ViewBag.AiRecipeIdea))
     {
-        <section class="recipe-panel mb-4">
-            <p class="recipe-section-label mb-2">Малко вдъхновение</p>
-            <h2 class="h4">Идея от ИИ</h2>
-            <p class="mb-0">@ViewBag.AiRecipeIdea</p>
+        <section class="ai-recipe-card mb-5">
+            <div class="ai-recipe-heading">
+                <span class="ai-recipe-icon" aria-hidden="true">✦</span>
+                <div>
+                    <p class="recipe-section-label mb-1">Малко вдъхновение</p>
+                    <h2 class="h3 mb-0">Идея от ИИ</h2>
+                </div>
+                <span class="ai-recipe-sparkle" aria-hidden="true">✳</span>
+            </div>
+            <div class="ai-recipe-content">@Html.Raw(System.Text.RegularExpressions.Regex.Replace(
+                System.Net.WebUtility.HtmlEncode((string)ViewBag.AiRecipeIdea),
+                "(?m)^(Ястие:|Допълнителни продукти:|Необходими продукти:|Време за приготвяне:|Приготвяне:)",
+                "<strong>$1</strong>"))</div>
         </section>
     }
 

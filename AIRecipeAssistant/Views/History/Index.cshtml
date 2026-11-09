@@ -40,9 +40,18 @@
 
                 @if (!string.IsNullOrWhiteSpace(item.AiRecipeIdea))
                 {
-                    <div class="recipe-panel mb-4">
-                        <p class="recipe-section-label mb-2">Идея от ИИ</p>
-                        <p class="mb-0">@item.AiRecipeIdea</p>
+                    <div class="ai-recipe-card mb-4">
+                        <div class="ai-recipe-heading">
+                            <span class="ai-recipe-icon" aria-hidden="true">✦</span>
+                            <div>
+                                <p class="recipe-section-label mb-1">Кулинарно вдъхновение</p>
+                                <h3 class="h4 mb-0">Идея от ИИ</h3>
+                            </div>
+                        </div>
+                        <div class="ai-recipe-content">@Html.Raw(System.Text.RegularExpressions.Regex.Replace(
+                            System.Net.WebUtility.HtmlEncode(item.AiRecipeIdea),
+                            "(?m)^(Ястие:|Допълнителни продукти:|Необходими продукти:|Време за приготвяне:|Приготвяне:)",
+                            "<strong>$1</strong>"))</div>
                     </div>
                 }
 

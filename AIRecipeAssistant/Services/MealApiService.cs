@@ -5,6 +5,11 @@ namespace AIRecipeAssistant.Services
 {
     public class MealApiService
     {
+    private static readonly JsonSerializerOptions JsonOptions = new()
+    {
+        PropertyNameCaseInsensitive = true
+    };
+
         private readonly HttpClient _httpClient;
         private readonly IConfiguration _configuration;
 
@@ -31,9 +36,7 @@ namespace AIRecipeAssistant.Services
 
             var json = await response.Content.ReadAsStringAsync();
 
-            return JsonSerializer.Deserialize<List<Meal>>(
-                json,
-                new JsonSerializerOptions { PropertyNameCaseInsensitive = true })
+        return JsonSerializer.Deserialize<List<Meal>>(json, JsonOptions)
                 ?? new List<Meal>();
         }
     }

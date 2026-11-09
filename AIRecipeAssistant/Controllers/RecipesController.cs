@@ -8,16 +8,16 @@ namespace AIRecipeAssistant.Controllers
     {
         private readonly MealApiService _mealApiService;
         private readonly JsonStorageService _jsonStorageService;
-        private readonly GeminiService _geminiService;
+        private readonly GroqService _groqService;
 
         public RecipesController(
     MealApiService mealApiService,
     JsonStorageService jsonStorageService,
-    GeminiService geminiService)
+    GroqService groqService)
         {
             _mealApiService = mealApiService;
             _jsonStorageService = jsonStorageService;
-            _geminiService = geminiService;
+            _groqService = groqService;
         }
 
         public IActionResult Index()
@@ -57,10 +57,12 @@ namespace AIRecipeAssistant.Controllers
                 search = cachedSearch;
 
                 // Добавя AI идея и към кеширан запис, който още няма такава.
-                if (string.IsNullOrWhiteSpace(search.AiRecipeIdea))
+                if (string.IsNullOrWhiteSpace(search.AiRecipeIdea)
+                    || search.AiRecipeIdea.Contains("ИИ услугата не работи", StringComparison.OrdinalIgnoreCase)
+                    || search.AiRecipeIdea.Contains("не успях да генерирам идея", StringComparison.OrdinalIgnoreCase))
                 {
                     search.AiRecipeIdea =
-                        await _geminiService.SuggestRecipeIdeaAsync(ingredientsText);
+                        await _groqService.SuggestRecipeIdeaAsync(ingredientsText);
 
                     await _jsonStorageService.SaveAsync(search);
                 }
@@ -68,7 +70,7 @@ namespace AIRecipeAssistant.Controllers
             else
             {
                 var meals = await _mealApiService.SearchByIngredientsAsync(ingredientList);
-                var aiIdea = await _geminiService.SuggestRecipeIdeaAsync(ingredientsText);
+                var aiIdea = await _groqService.SuggestRecipeIdeaAsync(ingredientsText);
 
                 search = new SearchHistory
                 {

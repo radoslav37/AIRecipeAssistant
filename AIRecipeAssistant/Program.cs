@@ -1,10 +1,11 @@
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddHttpClient();
-builder.Services.AddScoped<AIRecipeAssistant.Services.MealApiService>();
 builder.Services.AddScoped<AIRecipeAssistant.Services.JsonStorageService>();
-builder.Services.AddHttpClient<AIRecipeAssistant.Services.GeminiService>();
+builder.Services.AddHttpClient<AIRecipeAssistant.Services.MealApiService>();
+builder.Services.AddHttpClient<AIRecipeAssistant.Services.GroqService>(client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
